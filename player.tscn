@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://80j8civhw224"]
+[gd_scene load_steps=3 format=3 uid="uid://80j8civhw224"]
 
 [ext_resource type="Texture2D" uid="uid://bjyxq2n6rlps3" path="res://space_rocks_assets/assets/player_ship.png" id="1_xuuyd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l7l4w"]
+radius = 31.0161
 
 [node name="Player" type="RigidBody2D"]
 
@@ -10,3 +13,4 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_xuuyd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_l7l4w")
