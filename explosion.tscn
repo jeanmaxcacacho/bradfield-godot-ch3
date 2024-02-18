@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://mh3ghp8np0i2"]
+
+[node name="Node" type="Node"]
+
+[node name="Explosion" type="Sprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
