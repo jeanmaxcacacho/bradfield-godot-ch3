@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvaaobtpsfwnq"]
+
+[ext_resource type="Texture2D" uid="uid://c54wgdiv4x3ig" path="res://space_rocks_assets/assets/explosion.png" id="1_o5aoy"]
+
+[sub_resource type="Animation" id="Animation_g1f0x"]
+resource_name = "explosion"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wpi5r"]
+_data = {
+"explosion": SubResource("Animation_g1f0x")
+}
+
+[node name="Node" type="Node"]
+
+[node name="Explosion" type="Sprite2D" parent="."]
+texture = ExtResource("1_o5aoy")
+hframes = 8
+vframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wpi5r")
+}
