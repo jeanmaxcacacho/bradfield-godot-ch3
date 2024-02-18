@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://duk347ycewmb8"]
+
+[ext_resource type="Script" path="res://rock.gd" id="1_dkf1v"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_r1hj2"]
+bounce = 1.0
+
+[node name="Rock" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_r1hj2")
+linear_damp_mode = 1
+angular_damp_mode = 1
+script = ExtResource("1_dkf1v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
