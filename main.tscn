@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://pudyva8r27mh"]
+
+[ext_resource type="Texture2D" uid="uid://dwgvcxwk0cbqm" path="res://space_rocks_assets/assets/space_background.png" id="1_tk3ng"]
+[ext_resource type="PackedScene" uid="uid://80j8civhw224" path="res://player.tscn" id="2_jw17i"]
+
+[node name="Main" type="Node"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(538, 317)
+texture = ExtResource("1_tk3ng")
+
+[node name="Player" parent="." instance=ExtResource("2_jw17i")]

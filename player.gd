@@ -7,6 +7,11 @@ var screensize = Vector2.ZERO
 @export var engine_power = 500
 @export var spin_power = 8000
 
+# I need more booolets
+@export var bullet_scene : PackedScene
+@export var fire_rate = 0.15
+var can_shoot = true
+
 # I should really understand what Vectors do because I have no fucking clue
 var thrust = Vector2.ZERO
 var rotation_dir = 0
@@ -15,6 +20,7 @@ var rotation_dir = 0
 func _ready():
 	change_state(ALIVE)
 	screensize = get_viewport_rect().size
+	$GunCooldown.wait_time = fire_rate
 	
 
 func change_state(new_state):
@@ -43,6 +49,22 @@ func get_input():
 		thrust = transform.x*engine_power
 	# I'm guessing this depends on whether or not it's a negative or positive rotation
 	rotation_dir = Input.get_axis("rotate_left", "rotate_right")
+	if Input.is_action_just_pressed("shoot"):
+		shoot()
+
+
+func shoot():
+	if state == INVULNERABLE:
+		return
+	can_shoot = false
+	$GunCooldown.start()
+	var b = bullet_scene.instantiate()
+	get_tree().root.add_child(b)
+	b.start($Muzzle.global_transform)
+	
+	
+func _on_gun_cooldown_timeout():
+	can_shoot = true
 
 
 # again, it's really just about learning what the nodes do; this is a rigid body specific method
