@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://by1h635w06ku3"]
+
+[ext_resource type="Texture2D" uid="uid://ci2pfs7ky6b1b" path="res://space_rocks_assets/assets/laser.png" id="1_bsc6n"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2b1il"]
+radius = 4.0
+height = 26.0
+
+[node name="Bullet" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_bsc6n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_2b1il")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
