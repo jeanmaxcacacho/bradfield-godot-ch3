@@ -19,3 +19,10 @@ texture = ExtResource("1_xuuyd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_l7l4w")
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(40, 0)
+
+[node name="GunCooldown" type="Timer" parent="."]
+one_shot = true
+autostart = true
